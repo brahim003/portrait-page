@@ -1,0 +1,20 @@
+body {
+    background-color: #000; /* خلفية سوداء مثل الصورة الأصلية */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#portrait-container {
+    /* خط ثابت العرض ضروري جداً لضبط الأبعاد */
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace; 
+    font-size: 5px;      /* حجم الحرف */
+    line-height: 4px;    /* المسافة الرأسية بين الأسطر */
+    letter-spacing: 0px; /* المسافة الأفقية بين الحروف */
+    white-space: pre;    /* للحفاظ على الأسطر الجديدة */
+    text-align: center;
+    user-select: none;   /* منع تحديد النص للحفاظ على الشكل */
+}
