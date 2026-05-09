@@ -8,7 +8,8 @@ window.executeCoreLogic = async function (croppedImageSrc, userText) {
     // 1. SETTINGS (Resolution 150 for high detail, matching File 2)
     // ----------------------------------------------------------
     const resolution = 150; 
-    const myText = userText.replace(/\s+/g, ' ').trim();
+    const myText = userText.replace(/[.,]/g, "")
+    .replace(/\s+/g, ' ').trim() + " ";
 
     // ----------------------------------------------------------
     // 2. LOAD THE CROPPED IMAGE
@@ -126,7 +127,7 @@ window.executeCoreLogic = async function (croppedImageSrc, userText) {
         const blobUrl            = URL.createObjectURL(pdfBlob);
         const downloadLink       = document.createElement('a');
         downloadLink.href        = blobUrl;
-        downloadLink.download    = 'Typographic_Portrait.pdf';
+        downloadLink.download    = 'Portrait.pdf';
         downloadLink.style.display = 'none';
         document.body.appendChild(downloadLink);
         downloadLink.click();
