@@ -1,16 +1,127 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brahim el wafi</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Transform your portraits into stunning typographic art. Upload a photo, crop it perfectly, add your text, and generate beautiful text-portrait artwork instantly." />
+  <meta name="theme-color" content="#0a0a0f" />
+  <title>Portrait to Text Generator — Typographic Art Studio</title>
+
+  <!-- Cropper.js CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.6.2/cropper.min.js" defer></script>
+
+  <!-- App Styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <!-- الحاوية التي سيتم حقن النص داخلها عبر JS -->
-    <div id="portrait-container"></div>
+  <!-- ── Toast Container ─────────────────────────────────── -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
-    <script src="script.js"></script>
+  <!-- ── Main Wrapper ────────────────────────────────────── -->
+  <main class="app-wrapper" id="app">
+
+    <!-- Header -->
+    <header class="app-header">
+      <div class="logo-badge">
+        <span class="dot"></span>
+        Typographic Art Studio
+      </div>
+      <h1 class="app-title">Portrait to Text<br>Generator</h1>
+      <p class="app-subtitle">
+        Upload your portrait, crop it to perfection, write your story,
+        and watch it transform into stunning typographic artwork.
+      </p>
+    </header>
+
+    <!-- ── STEP 1: Upload & Crop ──────────────────────────── -->
+    <section class="card" id="step-upload" aria-labelledby="upload-step-label">
+      <div class="step-label" id="upload-step-label">
+        <span class="step-num">1</span>
+        Upload &amp; Crop Your Portrait
+      </div>
+
+      <!-- Image Preview Chip (shown after upload) -->
+      <div class="img-preview-chip" id="img-chip" role="status" aria-label="Uploaded image info">
+        <img src="" alt="Uploaded image thumbnail" class="chip-thumb" id="chip-thumb" />
+        <div class="chip-info">
+          <div class="chip-name" id="chip-name">—</div>
+          <div class="chip-size" id="chip-size">—</div>
+        </div>
+        <button class="chip-remove" id="chip-remove" aria-label="Remove uploaded image" title="Remove image">✕</button>
+      </div>
+
+      <!-- Drop Zone -->
+      <div
+        class="upload-zone"
+        id="upload-zone"
+        role="button"
+        tabindex="0"
+        aria-label="Click or drag and drop an image to upload"
+      >
+        
+        <h3>Drop your portrait here</h3>
+        <p>or click to browse your files</p>
+        <span class="upload-hint">JPG · PNG · WEBP · up to 30 MB</span>
+        <input type="file" id="file-input" accept="image/*" aria-hidden="true" />
+      </div>
+
+      <!-- Cropper Area -->
+      <div id="cropper-section" aria-label="Image cropper">
+        <div class="cropper-wrapper">
+          <img id="crop-image" src="" alt="Portrait to be cropped" />
+        </div>
+
+        <!-- Aspect ratio is fixed to A4 portrait (210:297) — no controls needed -->
+      </div>
+    </section>
+
+    <!-- ── STEP 2: Enter Text ─────────────────────────────── -->
+    <section class="card" id="step-text" aria-labelledby="text-step-label">
+      <div class="step-label" id="text-step-label">
+        <span class="step-num">2</span>
+        Add Your Custom Text
+      </div>
+
+      <div class="text-input-wrapper">
+        <div class="textarea-label">
+          <label for="user-text" style="font-size:0.88rem;color:var(--text-secondary);font-weight:500;">
+            Enter the text that will fill your portrait
+          </label>
+          <span class="char-counter" id="char-counter" aria-live="polite">0 / 2000</span>
+        </div>
+        <textarea
+          id="user-text"
+          name="user-text"
+          placeholder="Type your lyrics, poem, quote, story, or any meaningful text here… The words will paint your portrait."
+          spellcheck="true"
+          autocomplete="off"
+          maxlength="2000"
+          aria-describedby="char-counter"
+        ></textarea>
+      </div>
+    </section>
+
+    <!-- ── STEP 3: Generate ───────────────────────────────── -->
+    <div class="generate-wrap">
+      <button id="generate-btn" type="button" aria-label="Generate typographic portrait art">
+        <span class="btn-content">
+          <span class="btn-text">Generate Art</span>
+        </span>
+      </button>
+    </div>
+
+  </main>
+
+  <!-- ── المكتبة ديال jsPDF (زدناها هنا) ──────────── -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <!-- ── UI Handler (must load before script.js) ──────────── -->
+  <script src="app.js"></script>
+
+  <!-- ── Core Generation Logic ─────────────────────────────── -->
+  <script src="script.js"></script>
+
 </body>
 </html>
