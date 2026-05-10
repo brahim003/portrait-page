@@ -1252,18 +1252,13 @@ body::before {
   word-break: break-all;
 }
 
-/* Ad slot */
-#ad-slot {
+/* Adsterra Native Banner */
+#adsterra-native-ad {
+  margin: 20px auto;
+  text-align: center;
+  min-height: 250px;
   width: 100%;
-  min-height: 0;
-  border-radius: var(--radius-sm);
   overflow: hidden;
-}
-
-#ad-slot:not(:empty) {
-  border: 1px dashed rgba(255,255,255,0.08);
-  background: rgba(0,0,0,0.2);
-  padding: 6px;
 }
 
 /* Download PDF — neon primary button */

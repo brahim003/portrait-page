@@ -307,6 +307,8 @@
   });
 
   // ── Download PDF button ──────────────────────────────────
+  // The Adsterra popunder script (already in index.html) fires
+  // automatically when the user clicks this button.
   downloadPdfBtn.addEventListener('click', async () => {
     if (downloadPdfBtn.disabled) return;
 
