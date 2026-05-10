@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Learn about Typographic Art Studio — the story, the technology, and the philosophy behind the Portrait to Text Generator." />
+  <meta name="theme-color" content="#0a0a0f" />
+  <title>About — Typographic Art Studio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="app-wrapper" id="app">
+
+    <!-- Nav row -->
+    <nav class="inner-nav" aria-label="Site navigation">
+      <div class="logo-badge">
+        <span class="dot"></span>
+        Typographic Art Studio
+      </div>
+      <a href="index.html" class="back-link" aria-label="Back to generator">
+        ← Back to Generator
+      </a>
+    </nav>
+
+    <!-- Hero -->
+    <header class="page-hero">
+      <h1 class="app-title">About the Studio</h1>
+      <p class="app-subtitle">
+        Where every word becomes a brushstroke and every portrait tells a story
+        written in the language you choose.
+      </p>
+    </header>
+
+    <!-- What it is -->
+    <article class="prose-card">
+      <h2><span class="icon">🎨</span> What Is This?</h2>
+      <p>
+        <strong style="color:var(--text-primary)">Typographic Art Studio</strong> is a
+        browser-based creative tool that transforms any portrait photograph into a
+        stunning piece of typographic artwork. Instead of pixels of flat color, your image
+        is reconstructed entirely from characters — your own words, lyrics, a poem, or
+        any meaningful text you choose.
+      </p>
+      <p>
+        The result is a high-resolution, print-ready A4 PDF where every letter carries
+        the exact color of the pixel it replaces, creating a seamless fusion of
+        photography and typography.
+      </p>
+    </article>
+
+    <!-- How it works -->
+    <article class="prose-card">
+      <h2><span class="icon">⚙️</span> How It Works</h2>
+      <p>The generation pipeline runs entirely in your browser — no servers, no uploads, no data leaving your device.</p>
+      <ol style="padding-left:20px;margin-top:8px;">
+        <li style="color:var(--text-secondary);margin-bottom:8px;font-size:0.95rem;">
+          <strong style="color:var(--text-primary)">Upload & Crop</strong> — You select a portrait. The built-in
+          <a href="https://fengyuanchen.github.io/cropperjs/" target="_blank" rel="noopener">Cropper.js</a>
+          tool lets you frame the subject perfectly at an A4 proportion (210 × 297 mm).
+        </li>
+        <li style="color:var(--text-secondary);margin-bottom:8px;font-size:0.95rem;">
+          <strong style="color:var(--text-primary)">Analyse Pixels</strong> — The cropped image is drawn onto an
+          HTML5 Canvas element. Each pixel's RGB color value is sampled at the chosen resolution.
+        </li>
+        <li style="color:var(--text-secondary);margin-bottom:8px;font-size:0.95rem;">
+          <strong style="color:var(--text-primary)">Map Characters</strong> — Your input text loops continuously,
+          placing one character per pixel. Each character inherits the exact color of its corresponding pixel.
+        </li>
+        <li style="color:var(--text-secondary);font-size:0.95rem;">
+          <strong style="color:var(--text-primary)">Generate PDF</strong> —
+          <a href="https://parall.ax/products/jspdf" target="_blank" rel="noopener">jsPDF</a>
+          renders every colored character onto a black A4 canvas and packages it into a
+          downloadable PDF file — no server required.
+        </li>
+      </ol>
+    </article>
+
+    <!-- Feature grid -->
+    <article class="prose-card">
+      <h2><span class="icon">✨</span> Key Features</h2>
+      <div class="feature-grid">
+        <div class="feature-item">
+          <div class="fi-icon">🔒</div>
+          <h3>100% Private</h3>
+          <p>All processing happens in your browser. Your images are never uploaded anywhere.</p>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">🖨️</div>
+          <h3>Print-Ready PDF</h3>
+          <p>Output is a true A4 PDF you can send straight to any print shop.</p>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">✂️</div>
+          <h3>Smart Cropping</h3>
+          <p>Cropper.js locks the crop to A4 proportions so your PDF always fills the page perfectly.</p>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">💬</div>
+          <h3>Your Words</h3>
+          <p>Any language, any script — lyrics, poems, love letters, or anything meaningful to you.</p>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">🌐</div>
+          <h3>No Install</h3>
+          <p>Runs in any modern browser. No account, no app, no fees.</p>
+        </div>
+        <div class="feature-item">
+          <div class="fi-icon">🎨</div>
+          <h3>True Color</h3>
+          <p>Each character inherits the precise RGB value of its pixel for photorealistic results.</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Tech stack -->
+    <article class="prose-card">
+      <h2><span class="icon">🛠️</span> Built With</h2>
+      <ul>
+        <li><strong style="color:var(--text-primary)">HTML5 Canvas API</strong> — pixel-level image sampling</li>
+        <li><strong style="color:var(--text-primary)">Cropper.js 1.6</strong> — interactive in-browser image cropping</li>
+        <li><strong style="color:var(--text-primary)">jsPDF 2.5</strong> — client-side PDF generation</li>
+        <li><strong style="color:var(--text-primary)">Vanilla JavaScript</strong> — zero frameworks, zero dependencies beyond the above</li>
+        <li><strong style="color:var(--text-primary)">CSS Custom Properties</strong> — consistent dark-theme design system</li>
+        <li><strong style="color:var(--text-primary)">Google Fonts (Inter & Outfit)</strong> — modern, legible typography</li>
+      </ul>
+    </article>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Generator</a>
+        <span class="footer-sep">·</span>
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+      </div>
+      <p class="footer-copy">© 2025 Typographic Art Studio. All rights reserved.</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>

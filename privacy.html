@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Privacy Policy for Typographic Art Studio — understand how your data is handled (spoiler: it stays on your device)." />
+  <meta name="theme-color" content="#0a0a0f" />
+  <title>Privacy Policy — Typographic Art Studio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <main class="app-wrapper" id="app">
+
+    <!-- Nav row -->
+    <nav class="inner-nav" aria-label="Site navigation">
+      <div class="logo-badge">
+        <span class="dot"></span>
+        Typographic Art Studio
+      </div>
+      <a href="index.html" class="back-link" aria-label="Back to generator">
+        ← Back to Generator
+      </a>
+    </nav>
+
+    <!-- Hero -->
+    <header class="page-hero">
+      <h1 class="app-title">Privacy Policy</h1>
+      <p class="app-subtitle">
+        We built this tool with privacy as a first principle.<br>
+        Here is everything you need to know about how your data is handled.
+      </p>
+      <span class="last-updated" style="display:inline-block;margin-top:16px;font-size:0.78rem;color:var(--text-muted);background:var(--bg-elevated);border:1px solid var(--border-subtle);border-radius:50px;padding:4px 14px;">
+        Last updated: May 2025
+      </span>
+    </header>
+
+    <!-- The short version -->
+    <article class="prose-card" style="border-color:rgba(124,58,237,0.3);background:rgba(124,58,237,0.06);">
+      <h2>The Short Version</h2>
+      <p>
+        <strong style="color:var(--text-primary)">Your images and text never leave your device.</strong>
+        All processing — cropping, pixel sampling, character mapping, and PDF generation — happens
+        100% inside your browser using standard Web APIs. We do not operate any backend server that
+        receives or stores your files.
+      </p>
+    </article>
+
+    <!-- Data we collect -->
+    <article class="prose-card">
+      <h2>Information We Collect</h2>
+      <p>
+        <strong style="color:var(--text-primary)">We collect no personal information.</strong>
+        This application has no user accounts, no login, and no registration flow.
+        The following are the only "data operations" that occur:
+      </p>
+      <ul>
+        <li>
+          <strong style="color:var(--text-primary)">Images you upload</strong> — read locally by the browser's
+          <code style="background:var(--bg-elevated);padding:1px 6px;border-radius:4px;font-size:0.85rem;">FileReader</code> API
+          and held in memory for the duration of your session only. They are never transmitted to any server.
+        </li>
+        <li>
+          <strong style="color:var(--text-primary)">Text you type</strong> — stored only in the
+          <code style="background:var(--bg-elevated);padding:1px 6px;border-radius:4px;font-size:0.85rem;">&lt;textarea&gt;</code>
+          DOM element for the duration of your session. It is not persisted to
+          <code style="background:var(--bg-elevated);padding:1px 6px;border-radius:4px;font-size:0.85rem;">localStorage</code>
+          or sent anywhere.
+        </li>
+        <li>
+          <strong style="color:var(--text-primary)">Generated PDFs</strong> — created entirely in memory using jsPDF,
+          then offered as a direct browser download. No copy is retained on any server.
+        </li>
+      </ul>
+    </article>
+
+    <!-- Third-party libraries -->
+    <article class="prose-card">
+      <h2> Third-Party Libraries (CDN)</h2>
+      <p>
+        This page loads the following resources from external CDNs. The CDN providers
+        may log your IP address as part of their standard access logs when your browser
+        fetches these files:
+      </p>
+      <ul>
+        <li>
+          <strong style="color:var(--text-primary)">Cropper.js</strong> — served from
+          <a href="https://cdnjs.cloudflare.com" target="_blank" rel="noopener">cdnjs.cloudflare.com</a>
+          (Cloudflare). Govened by
+          <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare's Privacy Policy</a>.
+        </li>
+        <li>
+          <strong style="color:var(--text-primary)">jsPDF</strong> — also served from cdnjs.cloudflare.com.
+        </li>
+        <li>
+          <strong style="color:var(--text-primary)">Google Fonts</strong> — served from
+          <a href="https://fonts.googleapis.com" target="_blank" rel="noopener">fonts.googleapis.com</a>.
+          Governed by
+          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google's Privacy Policy</a>.
+        </li>
+      </ul>
+      <p>
+        Beyond the network requests to fetch these static assets, none of these libraries
+        transmit your images or text to their respective providers.
+      </p>
+    </article>
+
+    <!-- Cookies & storage -->
+    <article class="prose-card">
+      <h2> Cookies &amp; Local Storage</h2>
+      <p>
+        This application does <strong style="color:var(--text-primary)">not</strong> set any
+        cookies, does not use <code style="background:var(--bg-elevated);padding:1px 6px;border-radius:4px;font-size:0.85rem;">localStorage</code>,
+        and does not use <code style="background:var(--bg-elevated);padding:1px 6px;border-radius:4px;font-size:0.85rem;">sessionStorage</code>
+        for any purpose. When you close the browser tab, all image and text data is discarded automatically.
+      </p>
+    </article>
+
+    <!-- Analytics -->
+    <article class="prose-card">
+      <h2> Analytics &amp; Tracking</h2>
+      <p>
+        This application does <strong style="color:var(--text-primary)">not</strong> include
+        any analytics, telemetry, tracking pixels, or third-party scripts whose purpose
+        is to monitor user behavior. There are no heatmaps, session recordings, or
+        advertising SDKs embedded in this tool.
+      </p>
+    </article>
+
+    <!-- Children -->
+    <article class="prose-card">
+      <h2> Children's Privacy</h2>
+      <p>
+        This tool is designed for general creative use and does not knowingly collect
+        any information from anyone, including children under the age of 13. Since no
+        data is collected at all, there is no special risk to younger users beyond
+        standard safe-browsing practices.
+      </p>
+    </article>
+
+    <!-- Changes -->
+    <article class="prose-card">
+      <h2> Changes to This Policy</h2>
+      <p>
+        If we ever introduce functionality that changes how data is handled (for example,
+        cloud saving or sharing features), this Privacy Policy will be updated before
+        those features ship, and the "Last updated" date at the top of this page will reflect
+        the change.
+      </p>
+    </article>
+
+    <!-- Contact -->
+    <article class="prose-card">
+      <h2> Contact</h2>
+      <p>
+        Have a privacy concern or a question about how this tool works?
+        Visit the <a href="about.html">About page</a> to learn more about
+        the technical implementation, or open an issue in the project repository.
+      </p>
+    </article>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Generator</a>
+        <span class="footer-sep">·</span>
+        <a href="about.html" class="footer-link">About</a>
+      </div>
+      <p class="footer-copy">© 2025 Typographic Art Studio. All rights reserved.</p>
+    </footer>
+
+  </main>
+
+</body>
+</html>

@@ -104,13 +104,72 @@
     </section>
 
     <!-- ── STEP 3: Generate ───────────────────────────────── -->
-    <div class="generate-wrap">
+    <div class="generate-wrap" id="generate-wrap">
       <button id="generate-btn" type="button" aria-label="Generate typographic portrait art">
         <span class="btn-content">
           <span class="btn-text">Generate Art</span>
         </span>
       </button>
     </div>
+
+    <!-- ── LOADING SCREEN ──────────────────────────────────── -->
+    <div id="loading-screen" class="loading-screen" hidden aria-live="polite">
+
+      <div class="ls-status-row">
+        <span class="ls-pulse" aria-hidden="true"></span>
+        <span class="ls-status-text" id="ls-status">Analyzing pixels...</span>
+        <span class="ls-percent" id="ls-percent">0%</span>
+      </div>
+
+      <div class="ls-track" role="progressbar"
+           aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"
+           id="ls-track">
+        <div class="ls-fill" id="ls-fill"></div>
+        <div class="ls-shimmer"></div>
+      </div>
+
+      <!-- Ad slot — place your ad network code inside this div -->
+      <div id="ad-placement" class="ad-placement"></div>
+
+    </div>
+
+    <!-- ── RESULTS SECTION ─────────────────────────────────── -->
+    <div id="results-section" class="results-section" hidden>
+
+      <!-- Floating glassmorphism card -->
+      <div class="glass-card" role="region" aria-label="Your generated portrait">
+
+        <!-- Typographic art preview — written by script.js into #portrait-container -->
+        <div class="result-art-frame">
+          <div id="portrait-container" class="portrait-preview" aria-label="Typographic art preview"></div>
+        </div>
+
+        <!-- Ad banner slot (place Adsterra code here) -->
+        <div id="ad-slot"></div>
+
+        <!-- Download PDF — primary neon button -->
+        <button id="download-pdf-btn" class="btn-download-pdf" aria-label="Download PDF">
+          ⬇ Download PDF
+        </button>
+
+        <!-- Start Over — ghost button -->
+        <button id="start-over-btn" class="btn-start-over" aria-label="Start over">
+          ↺ Start Over
+        </button>
+
+      </div>
+
+    </div>
+
+    <!-- ── Site Footer ───────────────────────────────────── -->
+    <footer class="site-footer">
+      <div class="footer-links">
+        <a href="about.html" class="footer-link">About</a>
+        <span class="footer-sep">·</span>
+        <a href="privacy.html" class="footer-link">Privacy Policy</a>
+      </div>
+      <p class="footer-copy">© 2025 Typographic Art Studio. All rights reserved.</p>
+    </footer>
 
   </main>
 
@@ -122,6 +181,8 @@
 
   <!-- ── Core Generation Logic ─────────────────────────────── -->
   <script src="script.js"></script>
+  
+  
 
 </body>
 </html>

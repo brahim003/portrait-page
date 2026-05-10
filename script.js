@@ -122,19 +122,11 @@ window.executeCoreLogic = async function (croppedImageSrc, userText) {
             }
         }
 
-        // Force-download logic
-        const pdfBlob            = doc.output('blob');
-        const blobUrl            = URL.createObjectURL(pdfBlob);
-        const downloadLink       = document.createElement('a');
-        downloadLink.href        = blobUrl;
-        downloadLink.download    = 'Portrait.pdf';
-        downloadLink.style.display = 'none';
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
-        URL.revokeObjectURL(blobUrl);
-        
-        console.log("PDF generated with File 2 aesthetic!");
+        // Store the blob — app.js will trigger the actual download on user click
+        const pdfBlob = doc.output('blob');
+        window._pdfBlobUrl = URL.createObjectURL(pdfBlob);
+
+        console.log("PDF generated — waiting for user to unlock download.");
 
     } catch (error) {
         console.error("PDF Error: ", error);
